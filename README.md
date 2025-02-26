@@ -24,8 +24,8 @@ Roulette API es un servicio REST desarrollado en **ASP.NET Core** con **Entity F
 
 ### 1. Clonar el repositorio
 ```sh
-git clone https://github.com/usuario/repo-roulette-api.git
-cd repo-roulette-api
+git clone https://github.com/Garnelian/Roulettes-Game.git
+cd RoulettesGame
 ```
 
 ### 2. Configurar la base de datos
@@ -98,7 +98,7 @@ public class Round {
 
 El modelo relacional generado mediante code first es el siguiente:
 
-![Modelo_Relacional_Sql_Server](./Modelo_Relacional.PNG)
+![Modelo_Relacional_Sql_Server](./Modelo_Relacional.png)
 
 
 ## Endpoints
