@@ -172,11 +172,9 @@ En caso de requerirse una apuesta sobre un color por ejemplo:
 
 ## Postman collection
 
-Esta es la colección de Postman para hacer test a las funcionalidades. La colección está en **RouletteGame.postman_collection.json**
+Esta es la colección de Postman para hacer test a las funcionalidades. La colección está disponible en la raiz del proyecto con nombre **RouletteGame.postman_collection.json**
 
-
-
-**Nota** las peticiones en postman estan mediante una varable de entorno previamente configurada({{hostGame}}) para entorno local(https://localhost:7080)
+**Nota:** las peticiones en postman estan mediante una variable de entorno previamente configurada({{hostGame}}) para entorno local(https://localhost:7080)
 
 ## **Logs**
 
