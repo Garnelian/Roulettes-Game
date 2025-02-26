@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RoulettesGame.Data.Repositories.Interfaces;
 
 namespace RoulettesGame.Data.Repositories
 {

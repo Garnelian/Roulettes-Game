@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RoulettesGame.Data.Repositories.Interfaces;
 using RoulettesGame.Models;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
@@ -8,7 +9,7 @@ namespace RoulettesGame.Data.Repositories
     {
         public RouletteRepository(ApplicationDbContext context) : base(context) { }
 
-        public async Task<IEnumerable<Roulette>> GetRuletteRoundsAsync(int[]? rouletteIds = null, bool? isActive = null)
+        public IEnumerable<Roulette> GetRuletteRounds(int[]? rouletteIds = null, bool? isActive = null)
         {
 
             var query = _context.Roullete
@@ -25,7 +26,31 @@ namespace RoulettesGame.Data.Repositories
                 query = query.Where(b => b.Active == isActive.Value);
             }
 
-            return await query.ToListAsync();
+            return query;
+        }
+
+        public async Task<IEnumerable<Roulette>> CloseRulettesAsync(int[] rouletteIds)
+        {
+            var roulletes = _context.Roullete?
+                           .Include(h => h.Rounds)
+                           .ThenInclude(n => n.Bets)
+                           .Where(x=> rouletteIds.Contains(x.Id));
+
+            if (roulletes != null)
+            {
+                foreach (var roullet in roulletes)
+                {
+                    roullet.Rounds
+                .ForEach(r =>
+                {
+                    r.Bets.ForEach(b => b.Active = false);
+                    r.Active = false;
+                }
+                );
+                }
+            }
+
+            return await roulletes.ToListAsync();
         }
     }
 }

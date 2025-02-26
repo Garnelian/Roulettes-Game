@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RoulettesGame.Data;
 
@@ -11,9 +12,11 @@ using RoulettesGame.Data;
 namespace RoulettesGame.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250226045910_AddLengthsInStrings")]
+    partial class AddLengthsInStrings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,12 +39,13 @@ namespace RoulettesGame.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("BetType")
-                        .HasColumnType("int");
+                    b.Property<decimal?>("AmountWon")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("ColorBet")
+                    b.Property<string>("Color")
+                        .IsRequired()
                         .HasMaxLength(10)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -50,7 +54,7 @@ namespace RoulettesGame.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<DateTime?>("ModificatedAt")
+                    b.Property<DateTime>("ModificatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("Number")
@@ -58,9 +62,6 @@ namespace RoulettesGame.Migrations
 
                     b.Property<int>("RoundId")
                         .HasColumnType("int");
-
-                    b.Property<decimal?>("TotalEarnings")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("User")
                         .IsRequired()

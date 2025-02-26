@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "bc4a20e4-00f4-40c8-9a09-e1358782e956",
+		"name": "RouletteGame",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36258084"
+	},
+	"item": [
+		{
+			"name": "Cerrar Ruleta",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{hostGame}}/api/roulettes/3/close",
+					"host": [
+						"{{hostGame}}"
+					],
+					"path": [
+						"api",
+						"roulettes",
+						"3",
+						"close"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Ruleta",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"Ruleta Centro\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostGame}}/api/roulettes",
+					"host": [
+						"{{hostGame}}"
+					],
+					"path": [
+						"api",
+						"roulettes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Apuesta",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "userId",
+						"value": "Alberto",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"Apuesta Prueba\",\r\n  \"user\": \"Camilo\",\r\n  \"betType\":\"NumberBet\",\r\n  \"number\": 10,\r\n  \"colorBet\":\"Red\",\r\n  \"amount\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hostGame}}/api/roulettes/3/bets",
+					"host": [
+						"{{hostGame}}"
+					],
+					"path": [
+						"api",
+						"roulettes",
+						"3",
+						"bets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Abrir Ruleta",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{hostGame}}/api/roulettes/3/rounds",
+					"host": [
+						"{{hostGame}}"
+					],
+					"path": [
+						"api",
+						"roulettes",
+						"3",
+						"rounds"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

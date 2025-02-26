@@ -1,4 +1,5 @@
 ﻿using RoulettesGame.Data.Repositories;
+using RoulettesGame.Data.Repositories.Interfaces;
 using RoulettesGame.Models;
 
 namespace RoulettesGame.Data.UnitOfWork

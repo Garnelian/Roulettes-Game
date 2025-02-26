@@ -1,4 +1,4 @@
-﻿namespace RoulettesGame.Data.Repositories
+﻿namespace RoulettesGame.Data.Repositories.Interfaces
 {
     public interface IRepository<T> where T : class
     {
