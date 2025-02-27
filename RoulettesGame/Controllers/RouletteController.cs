@@ -69,7 +69,7 @@ namespace RoulettesGame.Controllers
 
                 await _unitOfWork.CompleteAsync();
 
-                return Ok();
+                return NoContent();
             }
             catch (Exception ex)
             {
