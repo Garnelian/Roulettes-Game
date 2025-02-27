@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoulettesGame", "RoulettesGame\RoulettesGame.csproj", "{C3CD6023-6DA5-47FA-92B7-48F0E5B2834E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoullettesGameTest", "RoullettesGameTest\RoullettesGameTest.csproj", "{45B24E58-4035-44B1-80F9-D3B92735E5CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C3CD6023-6DA5-47FA-92B7-48F0E5B2834E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3CD6023-6DA5-47FA-92B7-48F0E5B2834E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3CD6023-6DA5-47FA-92B7-48F0E5B2834E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45B24E58-4035-44B1-80F9-D3B92735E5CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45B24E58-4035-44B1-80F9-D3B92735E5CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45B24E58-4035-44B1-80F9-D3B92735E5CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45B24E58-4035-44B1-80F9-D3B92735E5CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
